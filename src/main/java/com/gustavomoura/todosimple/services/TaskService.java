@@ -1,5 +1,6 @@
 package com.gustavomoura.todosimple.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,11 @@ public class TaskService {
 					"Não é possível excluir pois há entidades relacionadas"
 					);
 		}
+	}
+	
+	public List<Task> findAllByUserId(Long userId){
+		List<Task> tasks = this.taskRepository.buscarTarefasPorIdDeUsuario(userId);
+		return tasks;
 	}
 
 }
