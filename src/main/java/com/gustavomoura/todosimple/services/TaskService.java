@@ -36,6 +36,7 @@ public class TaskService {
 		return this.taskRepository.save(newObj);
 	}
 	
+	@Transactional
 	public void delete(Long id) {
 		findById(id);
 		try {
